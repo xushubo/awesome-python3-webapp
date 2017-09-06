@@ -6,8 +6,11 @@ Models for user, blog, comment.
 '''
 
 import time, uuid
+import logging
 
 from orm import Model, StringField, BooleanField, FloatField, TextField
+
+logging.basicConfig(level=logging.INFO)
 
 def next_id():
     return '%015d%s000' % (int(time.time() * 1000), uuid.uuid4().hex)
